@@ -98,6 +98,23 @@ def test_add_book_by_title
   }, result)
 end
 
+# Create a method that changes the rental details
+#  of a book by taking in the title of the book,
+# the student renting it and
+# the date it's due to be returned
+
+def test_change_return_date
+  library_class = Library.new(@books_list)
+  library_class.change_return_date("h2g2", "Hitch", "15/05/20")
+  # result = library_class.find_by_title("h2g2")
+  result = @books_list[2]
+  assert_equal({ title: "h2g2",
+    rental_details: {
+      student_name: "Hitch",
+      date: "15/05/20"
+      }
+  }, result)
+end
 
 
 

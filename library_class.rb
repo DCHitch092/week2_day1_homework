@@ -34,10 +34,16 @@ end
   end
 
   def add_book_by_title(new_title)
-  # new_student_name = "" if new_student_name.empty
-  # new_date = "" if new_student_date.empty
     @books_list.push(
       {title: new_title, rental_details: {student_name: "", date:""}})
   end
+
+  def change_return_date(title, student_name, new_return_date)
+    for book in @books_list
+      book[:rental_details][:date] = new_return_date if book[:title] == title
+    end
+    p @book_list 
+  end
+
 
 end
