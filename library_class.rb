@@ -19,5 +19,12 @@ end
     return @books_array[book_num]
   end
 
+  def find_by_title(query_title)
+    match = nil
+    for book in @books_array
+      match = book if book[:title] == query_title
+    end
+    return match
+  end
 
 end
