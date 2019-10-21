@@ -61,6 +61,18 @@ def test_get_book_from_title
     }, result)
 end
 
+# Create a method that takes in a book title
+# and returns only the rental details for that book.
+
+def test_return_rental_details_by_title__0
+  library_class = Library.new(@books_list)
+  result = library_class.find_rental_details_by_title("war_and_peace")
+  assert_equal({
+    student_name: "Yana",
+    date: "10/11/20"
+  }, result)
+  end
+
 
 
 

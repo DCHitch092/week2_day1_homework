@@ -27,4 +27,9 @@ end
     return match
   end
 
+  def find_rental_details_by_title(book_title)
+    book_found = find_by_title(book_title)
+    return book_found[:rental_details]
+  end
+
 end
